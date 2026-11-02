@@ -1,0 +1,19 @@
+RECORDED LAB EVIDENCE — not independently rerun.
+Baseline Dublin-PC ping to 10.0.0.2: learner reported success and 0% loss; full output not supplied.
+After SSH login from Dublin-PC, the learner supplied the following interface output (columns simplified):
+R2-CORK>show ip interface brief
+Interface             IP-Address      Status                 Protocol
+GigabitEthernet0/0    192.168.20.1    up                     up
+GigabitEthernet0/1    10.0.0.2        up                     up
+GigabitEthernet0/2    unassigned     administratively down  down
+Vlan1                unassigned     administratively down  down
+
+Router SSH check:
+SSH Enabled - version 2.0
+Authentication timeout: 120 secs; Authentication retries: 3
+
+Telnet test from Dublin-PC:
+Trying 10.0.0.2 ...Open
+[Connection to 10.0.0.2 closed by foreign host]
+
+After configuring enable secret, the learner supplied R2-CORK#show running-config in response to the remote administration test. Full SSH handshake/login transcript was not supplied.

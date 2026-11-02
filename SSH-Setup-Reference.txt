@@ -1,0 +1,28 @@
+Reference instructions for R2-CORK; not a raw transcript. All credentials below are public lab examples only.
+
+enable
+configure terminal
+ip domain-name office.test
+username netadmin secret CorkLab10
+crypto key generate rsa
+
+At the modulus prompt, enter 2048. This is the instructed key size; key-size output was not supplied.
+Then continue in configuration mode:
+ip ssh version 2
+line vty 0 4
+login local
+transport input ssh
+exit
+enable secret AdminLab10
+end
+copy running-config startup-config
+
+On DUBLIN-PC:
+ssh -l netadmin 10.0.0.2
+At Password: enter CorkLab10
+At R2-CORK>: enable
+At Password: enter AdminLab10
+At R2-CORK#: show running-config
+
+Exit SSH with exit, then test: telnet 10.0.0.2
+On router: show ip ssh
